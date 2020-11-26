@@ -23,16 +23,17 @@
     text-align: justify;
     line-height: 2rem;
     position: relative;
-    top: 10px;
+    top: 1rem;
     left: 21px;
-    width: 320px;
-    height: 200px;
+    width: 32rem;
+    height: 20rem;
     margin-left: 1.5rem;
     background-image: url('../../images/pattern-quotes.svg');
     background-repeat: no-repeat;
     background-position-x: initial;
     background-size: 6rem;
     padding: 1.7rem 0rem;
+    color: #545454
 }
 
 .container__content--text p:first-child{
