@@ -1,5 +1,5 @@
 .container{
-    background-color: #ad8b8b;
+    background-color:#eaeaea;
     display: flex;
     width: 100%;
     height: 100vh;
@@ -56,4 +56,5 @@
 .container__content--img{
     width: 25rem;
     height: 25rem;
+    background-color: #f3f2ff;
 }
