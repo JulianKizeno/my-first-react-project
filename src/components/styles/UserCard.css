@@ -1,0 +1,58 @@
+.container{
+    background-color: #ad8b8b;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    padding: 15.7%;
+}
+
+.container__content{
+    background-color: white;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: auto 20%;
+    padding: 0 5rem;
+    background-image: url('../../images/pattern-curve.svg');
+    background-repeat: no-repeat;
+    background-position-y: bottom;
+    background-size: 28rem;
+}
+
+.container__content--text{
+    text-align: justify;
+    line-height: 2rem;
+    position: relative;
+    top: 10px;
+    left: 21px;
+    width: 320px;
+    height: 200px;
+    margin-left: 1.5rem;
+    background-image: url('../../images/pattern-quotes.svg');
+    background-repeat: no-repeat;
+    background-position-x: initial;
+    background-size: 6rem;
+    padding: 1.7rem 0rem;
+}
+
+.container__content--text p:first-child{
+    margin-bottom: 2rem;
+}
+
+.container__content--text p:last-child{
+    font-weight: 100;
+}
+
+.container__content--fig{
+    padding: 3rem 2rem 3rem 0px;
+    margin: 2rem 2rem 2rem 0px;
+    background-image: url('../../images/pattern-bg.svg');
+    background-repeat: no-repeat;
+    background-size: 33rem;
+    background-position: right;
+}
+
+.container__content--img{
+    width: 25rem;
+    height: 25rem;
+}
