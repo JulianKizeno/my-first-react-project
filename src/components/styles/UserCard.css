@@ -17,6 +17,7 @@
     background-repeat: no-repeat;
     background-position-y: bottom;
     background-size: 28rem;
+    border-radius: 1rem;
 }
 
 .container__content--text{
