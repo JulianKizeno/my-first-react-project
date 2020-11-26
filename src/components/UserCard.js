@@ -1,8 +1,8 @@
-import React from 'react'
+import React, {Component} from 'react'
 import logo from '../images/megif.gif'
 import './styles/UserCard.css'
 
-class UserCard extends React.Component{
+class UserCard extends Component{
     render(){
         return (
             <div className='container'>
