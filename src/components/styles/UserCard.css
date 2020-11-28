@@ -1,26 +1,26 @@
-.container{
-    background-color:#eaeaea;
+.containerCard{
     display: flex;
     width: 100%;
-    height: 100vh;
-    padding: 15.7%;
+    justify-content: flex-start;
 }
 
-.container__content{
-    background-color: white;
+.containerCard__content{
+    background-color: #f7eaff;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin: auto 20%;
     padding: 0 5rem;
     background-image: url('../../images/pattern-curve.svg');
     background-repeat: no-repeat;
     background-position-y: bottom;
     background-size: 28rem;
     border-radius: 1rem;
+    margin: 0 5rem;
+    width: 70rem;
+    min-width: 65rem;
 }
 
-.container__content--text{
+.containerCard__content--text{
     text-align: justify;
     line-height: 2rem;
     position: relative;
@@ -37,15 +37,15 @@
     color: #545454
 }
 
-.container__content--text p:first-child{
+.containerCard__content--text p:first-child{
     margin-bottom: 2rem;
 }
 
-.container__content--text p:last-child{
+.containerCard__content--text p:last-child{
     font-weight: 100;
 }
 
-.container__content--fig{
+.containerCard__content--fig{
     padding: 3rem 2rem 3rem 0px;
     margin: 2rem 2rem 2rem 0px;
     background-image: url('../../images/pattern-bg.svg');
@@ -54,7 +54,7 @@
     background-position: right;
 }
 
-.container__content--img{
+.containerCard__content--img{
     width: 25rem;
     height: 25rem;
     background-color: #f5f9ff;
