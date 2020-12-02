@@ -1,28 +1,58 @@
 import React, {Component} from 'react'
-
 import './styles/BadgeNew.css'
+
 import Navigation from '../components/Navigation'
 import UserCard from '../components/UserCard'
+import BadgeForm from '../components/BadgeForm'
+
 import cardImage from '../images/me4.png'
 import { Col, Container, Row } from 'react-bootstrap'
 class BadgeNew extends Component{
+
+    state = {
+        form: {
+            firstName: '',
+            lastName: '',
+            email: '',
+            linkedin: '',
+            gitHub: '',
+            jobTitle: '',
+            coverLetter: ''
+        }
+    }
+
+    handleChange = e =>{
+        // let nextForm = this.state.form
+        // nextForm[e.target.name] = e.target.value
+        this.setState({
+            form: {
+                ...this.state.form,
+                [e.target.name]: e.target.value
+            }
+        })
+    }
+
     render(){
         return(
             <div>
                 <Navigation/>
                 <Container as='section'>
-                    <Row style={{height:'100vh', display: 'flex'}}>
-                        <Col md={4} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
+                    <Row style={{height:'90vh', display: 'flex'}}>
+                        <Col md={7} style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%'}}>
                             <UserCard
                                 cardImage = {cardImage}
                                 imgAlt = 'images gif'
-                                userName = 'Julian Quiceno'
-                                profession = 'Frontend Developer'
-                                textCard = '“ I am a junior web developer focused on advancing my professional career. I am responsible, communicative and I adapt easily to work teams. This is why I am looking for an opportunity to be part of a company. "'  
+                                firstName = {this.state.form.firstName}
+                                lastName = {this.state.form.lastName}
+                                email = {this.state.form.email}
+                                linkedin = {this.state.form.linkedin}
+                                gitHub = {this.state.form.gitHub}
+                                jobTitle = {this.state.form.jobTitle}
+                                coverLetter = {this.state.form.coverLetter}
                             />
                         </Col>
-                        <Col md={6}>
-                            <h1>JUST A TEST</h1>
+                        <Col md={3} style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%'}}>
+                            <BadgeForm onChange={this.handleChange} formValues={this.state.form}/>
                         </Col>
 
                     </Row>
@@ -34,3 +64,7 @@ class BadgeNew extends Component{
 }
 
 export default BadgeNew
+
+
+
+// '“ I am a junior web developer focused on advancing my professional career. I am responsible, communicative and I adapt easily to work teams. This is why I am looking for an opportunity to be part of a company. "'  

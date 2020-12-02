@@ -1,13 +1,12 @@
 .containerCard{
     display: flex;
     width: 100%;
-    justify-content: flex-start;
+    justify-content: space-evenly;
 }
 
 .containerCard__content{
     background-color: #f7eaff;
     display: flex;
-    justify-content: flex-end;
     align-items: center;
     padding: 0 5rem;
     background-image: url('../../images/pattern-curve.svg');
@@ -15,8 +14,6 @@
     background-position-y: bottom;
     background-size: 28rem;
     border-radius: 1rem;
-    margin: 0 5rem;
-    width: 70rem;
     min-width: 65rem;
 }
 
@@ -41,8 +38,26 @@
     margin-bottom: 2rem;
 }
 
-.containerCard__content--text p:last-child{
-    font-weight: 100;
+.containerCard__social-media{
+    text-align: center;
+    margin-left: 10rem;
+}
+
+.containerCard__social-media--icon{
+    margin-left: 1rem;
+    font-size: large;
+}
+
+.lkIn-icon{
+    color: #0a66c2;
+}
+
+.github-icon{
+    color: black;
+}
+
+.mail-icon{
+    color: #ea4335;
 }
 
 .containerCard__content--fig{
