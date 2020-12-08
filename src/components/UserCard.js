@@ -14,9 +14,9 @@ class UserCard extends Component{
                             <i><strong>{this.props.firstName} {this.props.lastName}</strong></i> ~ {this.props.jobTitle}
                         </p>
                         <div className="containerCard__social-media">
-                            <span><a href={this.props.gitHub}> <i className="far fa-envelope-open containerCard__social-media--icon mail-icon"></i></a></span>
-                            <span><a href={this.props.linkedin}> <i className="fab fa-linkedin-in containerCard__social-media--icon lkIn-icon"></i></a> </span>
-                            <span><a href={this.props.email}> <i className="fab fa-github containerCard__social-media--icon github-icon"></i></a></span>
+                            <span><a href={"mailto:" + this.props.email}target="_blank"> <i className="far fa-envelope-open containerCard__social-media--icon mail-icon"></i></a></span>
+                            <span><a href={this.props.linkedin} target="_blank"> <i className="fab fa-linkedin-in containerCard__social-media--icon lkIn-icon"></i></a> </span>
+                            <span><a href={this.props.gitHub} target="_blank"> <i className="fab fa-github containerCard__social-media--icon github-icon"></i></a></span>
                         </div>
                     </Card.Body>
                     <figure className='containerCard__content--fig'>
@@ -28,4 +28,4 @@ class UserCard extends Component{
     }
 }
 
-export default UserCard
+export default UserCard 

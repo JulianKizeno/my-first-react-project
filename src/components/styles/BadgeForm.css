@@ -21,16 +21,15 @@ html {
     justify-content: center;
     flex-direction: column;
     min-height: calc(100vh - 20rem);
-    margin-bottom: 5rem;
+    margin: .5rem 0;
 }
   
 .formContainer__content {
     background: linear-gradient(#d3629d, #5647da);
     border: 0.2rem solid #f4f4f7;
-    border-radius: 4rem;
+    border-radius: 4rem; 
     color: white;
-    padding: 6rem 6.8rem 4rem;
-    margin: 2rem 0rem;
+    padding: 4rem;
     min-height: 73rem;
     width: 45rem;
     display: flex;
@@ -48,10 +47,6 @@ html {
     font-size: 1.4rem;
     display: block;
     margin-bottom: 2rem;
-}
-  
-#cbox1 {
-    margin-right: 0.5rem;
 }
   
 .formContainer__content--remember-me {
@@ -124,46 +119,36 @@ select:-webkit-autofill:focus {
     -webkit-text-fill-color: white;
     transition: background-color 5000s ease-in-out 0s;
 }
-  
+
 .textarea{
     width: 22.5rem;
     height: 5rem;
     margin-bottom: 2rem;
     outline: none;
 }
-  
-::placeholder {
-    color: white;
-}
-  
-.footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 10rem;
-    width: 100%;
-    background-color: #a987f8;
-}
-  
-.footer a {
-    color: white;
+
+.formContainer__content--Button {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 2.5rem;
     cursor: pointer;
-    padding-left: 3rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+    font-family: "Mulish", sans-serif;
+    height: 5rem;
+    letter-spacing: 0.1rem;
+    margin: 1rem 0rem;
+    padding: 0;
+    width: 26rem;
+}
+
+.formContainer__content--Button:hover {
+    box-shadow: 0 1px 6px 0 #20212447;
     text-decoration: none;
-    margin-right: 6rem;
 }
   
-.footer a:hover {
-    text-decoration: underline;
-}
+/* @media only screen and (max-width: 600px) {
   
-@media only screen and (max-width: 600px) {
-    .header {
-        display: flex;
-        justify-content: center;
-    }
-  
-    .formContainer__content--titulo-ini-ses {
+    .formContainer__content--title-new-card {
         text-align: center;
     }
   
@@ -174,12 +159,4 @@ select:-webkit-autofill:focus {
         width: 100%;
     }
   
-    .footer {
-        align-items: flex-start;
-        flex-direction: column;
-    }
-  
-    .footer a {
-        margin-right: 0;
-    }
-}
+} */

@@ -1,0 +1,20 @@
+.UserCardList__container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.UserCardList__buttons-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.UserCardList__buttons-container--NewCardBtn{
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background-color: #d3629d;
+    border-radius: .3rem;
+}

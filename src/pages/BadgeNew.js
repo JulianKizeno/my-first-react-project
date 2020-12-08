@@ -17,6 +17,7 @@ class BadgeNew extends Component{
             linkedin: '',
             gitHub: '',
             jobTitle: '',
+            cardImage: '',
             coverLetter: ''
         }
     }
@@ -37,8 +38,9 @@ class BadgeNew extends Component{
             <div>
                 <Navigation/>
                 <Container as='section'>
-                    <Row style={{height:'90vh', display: 'flex'}}>
-                        <Col md={7} style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%'}}>
+                    <Row style={{display: 'flex'}}>
+                        <Col md={7} style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', flexDirection: 'column'}}>
+                            <h2 style={{marginBottom: '2rem', fontSize: '2rem'}}>This is how your Cover Letter Card will look like</h2>
                             <UserCard
                                 cardImage = {cardImage}
                                 imgAlt = 'images gif'
