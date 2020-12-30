@@ -1,7 +1,6 @@
 import React, {Component} from 'react'
 import './styles/BadgeNew.css'
 
-import Navigation from '../components/Navigation'
 import UserCard from '../components/UserCard'
 import BadgeForm from '../components/BadgeForm'
 
@@ -35,11 +34,17 @@ class BadgeNew extends Component{
 
     render(){
         return(
-            <div>
-                <Navigation/>
+            <React.Fragment>
                 <Container as='section'>
-                    <Row style={{display: 'flex'}}>
-                        <Col md={7} style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', flexDirection: 'column'}}>
+                    <Row>
+                        <Col md={7} style={{
+                            display: 'flex', 
+                            justifyContent: 'center', 
+                            alignItems: 'center', 
+                            width: '100%', 
+                            flexDirection: 'column', 
+                            margin: '0 5rem'}}
+                        >
                             <h2 style={{marginBottom: '2rem', fontSize: '2rem'}}>This is how your Cover Letter Card will look like</h2>
                             <UserCard
                                 cardImage = {cardImage}
@@ -60,7 +65,7 @@ class BadgeNew extends Component{
                     </Row>
 
                 </Container>
-            </div>
+            </React.Fragment>
         )
     }
 }

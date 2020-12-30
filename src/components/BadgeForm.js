@@ -51,10 +51,6 @@ class BadgeForm extends Component{
                             <Form.Label>Cover Letter (few words)</Form.Label>
                             <Form.Control as="textarea" className="textarea "  name="coverLetter" value={this.props.formValues.coverLetter} onChange={this.props.onChange} required/>
                         </Form.Group>
-                        {/* <Form.Group>
-                            <Button className="formContainer__content--Button" id='input'>Upload Card Image</Button>
-                            <Form.File type="file" className="formInput" id='input' accept="images/*" name="cardImage" value={this.props.formValues.cardImage} onChange={this.props.onChange} required/>
-                        </Form.Group> */}
                         <Button className="formContainer__content--Button" onClick={this.handleClick} type="submit">Create New Card</Button>
                     </Form>
                 </div>

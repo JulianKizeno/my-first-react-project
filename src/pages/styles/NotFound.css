@@ -1,0 +1,37 @@
+.error{
+    background: linear-gradient(#d3629d, #5647da);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0rem 3rem;
+    min-height: 89vh;
+}
+
+.error__container{
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.error__container > h1{
+    font-size: 6rem;
+    text-align: center;
+    font-weight: 300;
+    animation: titleGrow 2s infinite alternate;
+}
+
+.error__container > p{
+    text-align: center;
+    font-size: 2rem;
+}
+
+@keyframes titleGrow {
+    0% {
+      transform: scale(1);
+    }
+    
+    100% {
+      transform: scale(1.5);
+    }
+}

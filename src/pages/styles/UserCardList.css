@@ -17,4 +17,14 @@
     padding: 1.5rem;
     background-color: #d3629d;
     border-radius: .3rem;
+    box-shadow: 0 5px 6px 0 #20212447;
+    color: #fefeff;
+}
+
+.UserCardList__buttons-container--NewCardBtn:hover{
+    color: white;
+    position: relative;
+    top: 5px;
+    box-shadow: none;
+    text-decoration: none;
 }
