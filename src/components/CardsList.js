@@ -5,6 +5,7 @@ import { Card } from 'react-bootstrap'
 
 class CardsList extends Component{
     render(){
+        console.log(this.props.badges)
         return (
                 <ul className='CardsList__list'>
                     {this.props.badges.map((newCard)=>{
