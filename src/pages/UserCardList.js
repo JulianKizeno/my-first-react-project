@@ -5,6 +5,7 @@ import './styles/UserCardList.css'
 
 import CardsList from '../components/CardsList'
 import PageLoading from '../components/PageLoading'
+import PageError from '../components/PageError'
 import api from '../api'
 
 class UserCardList extends Component{
@@ -20,8 +21,10 @@ class UserCardList extends Component{
     }
 
     componentDidMount = () => {
-        this.fetchData()
-        console.log('3. componentDidMount()')
+        setTimeout (() => {
+            console.log('3. componentDidMount()') 
+            this.fetchData()
+        },2000)
     }
 
     fetchData = async () => {
@@ -62,7 +65,7 @@ class UserCardList extends Component{
         }
 
         if(this.state.error){
-            return `Error: ${this.state.error.message}`
+            return <PageError error={this.state.error}/>
         }
         return(
             <React.Fragment>

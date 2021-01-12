@@ -2,13 +2,14 @@ import React, {Component} from 'react'
 
 import './styles/CardsList.css'
 import { Card } from 'react-bootstrap'
+import Gravatar from './Gravatar'
 
 class CardsList extends Component{
     render(){
         console.log(this.props.badges)
         return (
                 <ul className='CardsList__list'>
-                    {this.props.badges.map((newCard)=>{
+                    {this.props.badges.reverse().map((newCard)=>{
                         return(
                             <li key={newCard.id} className='CardsList__list--item'>
                                 <Card as='article' className='CardsList__content'>
@@ -24,7 +25,12 @@ class CardsList extends Component{
                                         </div>
                                     </Card.Body>
                                     <figure className='CardsList__content--fig'>
-                                        <img src={newCard.cardImage} alt={newCard.imgAlt} className='CardsList__content--img'/>
+                                        <Gravatar 
+                                            // src={newCard.cardImage} 
+                                            email={newCard.email}
+                                            alt={newCard.imgAlt} 
+                                            className='CardsList__content--img'
+                                        />
                                     </figure>
                                 </Card>
                             </li>

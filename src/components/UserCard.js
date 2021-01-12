@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 
 import { Card } from 'react-bootstrap'
 import './styles/UserCard.css'
+import Gravatar from '../components/Gravatar'
 
 class UserCard extends Component{
     render(){
@@ -20,7 +21,11 @@ class UserCard extends Component{
                         </div>
                     </Card.Body>
                     <figure className='containerCard__content--fig'>
-                        <img src={this.props.cardImage} alt={this.props.imgAlt} className='containerCard__content--img'/>
+                        <Gravatar 
+                            email={this.props.email} 
+                            alt={this.props.imgAlt} 
+                            className='containerCard__content--img'
+                        />
                     </figure>
                 </Card>
             </div>

@@ -70,7 +70,8 @@
 }
 
 .containerCard__content--img{
-    width: 23rem;
-    height: 23rem;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
     background-color: #f5f9ff;
 }

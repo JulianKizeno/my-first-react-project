@@ -10,11 +10,11 @@ class BadgeForm extends Component{
         console.log({e},'Button was clicked')
     }
 
-    handleSubmit = e =>{
-        e.preventDefault()
-        console.log({e},'Form was submitted')
-        console.log(this.state)
-    }
+    // handleSubmit = e =>{
+    //     e.preventDefault()
+    //     console.log({e},'Form was submitted')
+    //     console.log(this.state)
+    // }
 
     render(){
         return(
@@ -22,7 +22,7 @@ class BadgeForm extends Component{
             <Container className="formContainer">
                 <div className="formContainer__content">
                     <h2 className="formContainer__content--title-new-card">New Card</h2>
-                    <Form action="" className="formContainer__content--form" onSubmit={this.handleSubmit}>
+                    <Form action="" className="formContainer__content--form" onSubmit={this.props.onSubmit}>
                         <Form.Group >
                             <Form.Label>First Name</Form.Label>
                             <Form.Control type="text" className="formInput"  name="firstName" value={this.props.formValues.firstName} onChange={this.props.onChange} required/>
@@ -53,6 +53,7 @@ class BadgeForm extends Component{
                         </Form.Group>
                         <Button className="formContainer__content--Button" onClick={this.handleClick} type="submit">Create New Card</Button>
                     </Form>
+                    {this.props.error && <p className='text-danger'>{this.props.error.message}</p>}
                 </div>
             </Container>
         

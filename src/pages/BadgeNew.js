@@ -3,12 +3,14 @@ import './styles/BadgeNew.css'
 
 import UserCard from '../components/UserCard'
 import BadgeForm from '../components/BadgeForm'
-
-import cardImage from '../images/me4.png'
 import { Col, Container, Row } from 'react-bootstrap'
+import api from '../api'
+import PageLoading from '../components/PageLoading'
+
 class BadgeNew extends Component{
 
     state = {
+        loading: false,
         form: {
             firstName: '',
             lastName: '',
@@ -16,7 +18,6 @@ class BadgeNew extends Component{
             linkedin: '',
             gitHub: '',
             jobTitle: '',
-            cardImage: '',
             coverLetter: ''
         }
     }
@@ -32,7 +33,30 @@ class BadgeNew extends Component{
         })
     }
 
+    handleSubmit = async e =>{
+        e.preventDefault()
+        this.setState({
+            loading: true,
+            error: null
+        })
+        try {
+            await api.badges.create(this.state.form)
+            this.setState({
+                loading: false
+            })
+            this.props.history.push('/badges')
+        } catch (error) {
+            this.setState({
+                loading: false,
+                error: error
+            })
+        }
+    }
+
     render(){
+        if(this.state.loading){
+            return <PageLoading />
+        }
         return(
             <React.Fragment>
                 <Container as='section'>
@@ -45,21 +69,30 @@ class BadgeNew extends Component{
                             flexDirection: 'column', 
                             margin: '0 5rem'}}
                         >
-                            <h2 style={{marginBottom: '2rem', fontSize: '2rem'}}>This is how your Cover Letter Card will look like</h2>
+                            <h2 style={{
+                                marginBottom: '2rem', 
+                                fontSize: '2rem'
+                                }}
+                            >This is how your Cover Letter Card will look like</h2>
+                            
                             <UserCard
-                                cardImage = {cardImage}
                                 imgAlt = 'images gif'
-                                firstName = {this.state.form.firstName}
-                                lastName = {this.state.form.lastName}
-                                email = {this.state.form.email}
-                                linkedin = {this.state.form.linkedin}
-                                gitHub = {this.state.form.gitHub}
-                                jobTitle = {this.state.form.jobTitle}
-                                coverLetter = {this.state.form.coverLetter}
+                                firstName = {this.state.form.firstName || 'First Name'}
+                                lastName = {this.state.form.lastName || 'Last Namae'}
+                                email = {this.state.form.email || 'First Name'}
+                                linkedin = {this.state.form.linkedin || 'First Name'}
+                                gitHub = {this.state.form.gitHub || 'First Name'}
+                                jobTitle = {this.state.form.jobTitle || 'Job Title'}
+                                coverLetter = {this.state.form.coverLetter || 'Your Cover Letter'}
                             />
                         </Col>
                         <Col md={3} style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%'}}>
-                            <BadgeForm onChange={this.handleChange} formValues={this.state.form}/>
+                            <BadgeForm 
+                                onChange={this.handleChange} 
+                                onSubmit={this.handleSubmit}
+                                formValues={this.state.form}
+                                error={this.state.error}
+                            />
                         </Col>
 
                     </Row>
