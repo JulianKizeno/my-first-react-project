@@ -6,7 +6,9 @@ import './styles/UserCardList.css'
 import CardsList from '../components/CardsList'
 import PageLoading from '../components/PageLoading'
 import PageError from '../components/PageError'
+import MiniLoader from '../components/MiniLoader'
 import api from '../api'
+
 
 class UserCardList extends Component{
 
@@ -24,14 +26,12 @@ class UserCardList extends Component{
         setTimeout (() => {
             console.log('3. componentDidMount()') 
             this.fetchData()
-        },2000)
+        },1000)
+        this.intervalId = setInterval(this.fetchData, 4000)
     }
 
     fetchData = async () => {
-        this.setState({
-            loading: true,
-            error: null
-        })
+        this.setState({loading: true, error: null})
 
         try {
             const data = await api.badges.list()
@@ -53,14 +53,14 @@ class UserCardList extends Component{
     //     })
     // }
 
-    // componentWillUnmount = () => {
-    //     console.log('6. componentWillUnmount()')
-    //     clearTimeout(this.timeoutId)
-    // }
+    componentWillUnmount = () => {
+        console.log('6. componentWillUnmount()')
+        clearInterval(this.intervalId)
+    }
     
     render(){
         console.log('2. render()')
-        if(this.state.loading){
+        if(this.state.loading && !this.state.data){
             return <PageLoading />
         }
 
@@ -74,6 +74,7 @@ class UserCardList extends Component{
                         <Link to='/badges/new' type="submit" className='UserCardList__buttons-container--NewCardBtn'>New User Card</Link>
                     </div>
                     <CardsList badges={this.state.data} />
+                    {this.state.loading && <MiniLoader/>}
                 </div>
 
             </React.Fragment>

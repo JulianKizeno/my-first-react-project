@@ -11,6 +11,8 @@ class BadgeNew extends Component{
 
     state = {
         loading: false,
+        error: null,
+        titleCreate: true,
         form: {
             firstName: '',
             lastName: '',
@@ -60,7 +62,7 @@ class BadgeNew extends Component{
         return(
             <React.Fragment>
                 <Container as='section'>
-                    <Row>
+                    <Row className={'badgesNew__row'}>
                         <Col md={7} style={{
                             display: 'flex', 
                             justifyContent: 'center', 
@@ -92,6 +94,7 @@ class BadgeNew extends Component{
                                 onSubmit={this.handleSubmit}
                                 formValues={this.state.form}
                                 error={this.state.error}
+                                titleCreate={this.state.titleCreate}
                             />
                         </Col>
 

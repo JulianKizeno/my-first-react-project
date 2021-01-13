@@ -21,7 +21,9 @@ class BadgeForm extends Component{
            
             <Container className="formContainer">
                 <div className="formContainer__content">
-                    <h2 className="formContainer__content--title-new-card">New Card</h2>
+                    <h2 className="formContainer__content--title-new-card">
+                        {this.props.titleCreate ? 'New Card': 'Edit Card'}
+                    </h2>
                     <Form action="" className="formContainer__content--form" onSubmit={this.props.onSubmit}>
                         <Form.Group >
                             <Form.Label>First Name</Form.Label>
@@ -32,7 +34,7 @@ class BadgeForm extends Component{
                             <Form.Control type="text" className="formInput"  name="lastName" value={this.props.formValues.lastName} onChange={this.props.onChange} required/>
                         </Form.Group>
                         <Form.Group >
-                            <Form.Label>Email</Form.Label>
+                            <Form.Label>Email (Gravatar)</Form.Label>
                             <Form.Control type="email" className="formInput"  name="email" value={this.props.formValues.email} onChange={this.props.onChange} required/>
                         </Form.Group>
                         <Form.Group >
@@ -51,7 +53,9 @@ class BadgeForm extends Component{
                             <Form.Label>Cover Letter (few words)</Form.Label>
                             <Form.Control as="textarea" className="textarea "  name="coverLetter" value={this.props.formValues.coverLetter} onChange={this.props.onChange} required/>
                         </Form.Group>
-                        <Button className="formContainer__content--Button" onClick={this.handleClick} type="submit">Create New Card</Button>
+                        <Button className="formContainer__content--Button" onClick={this.handleClick} type="submit">
+                            {this.props.titleCreate ? 'Create Card': 'Save Changes'}
+                        </Button>
                     </Form>
                     {this.props.error && <p className='text-danger'>{this.props.error.message}</p>}
                 </div>
