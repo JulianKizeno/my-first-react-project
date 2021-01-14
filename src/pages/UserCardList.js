@@ -27,7 +27,7 @@ class UserCardList extends Component{
             console.log('3. componentDidMount()') 
             this.fetchData()
         },1000)
-        this.intervalId = setInterval(this.fetchData, 4000)
+        this.intervalId = setInterval(this.fetchData, 9000)
     }
 
     fetchData = async () => {
@@ -60,6 +60,7 @@ class UserCardList extends Component{
     
     render(){
         console.log('2. render()')
+        console.log(this.state.data)
         if(this.state.loading && !this.state.data){
             return <PageLoading />
         }

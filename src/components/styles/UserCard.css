@@ -1,6 +1,5 @@
 .containerCard{
     display: flex;
-    width: 100%;
     justify-content: space-evenly;
 }
 
@@ -15,6 +14,28 @@
     background-size: 28rem;
     border-radius: 1rem;
     max-width: 65rem;
+}
+
+.CardsList__link-actions{
+    top: 14rem;
+    right: 4.5rem;
+    position: relative;
+    text-decoration: none;
+    margin-right: .5rem;
+}
+
+.CardList__button-actions i{
+    font-size: 1.5rem;
+    color: #906cd2;
+    filter: drop-shadow(0px 3px 2px #20212447);
+}
+
+.CardList__button-actions i:hover{
+    text-decoration: none;
+    position: relative;
+    top: .3rem;
+    color: #d3629d;
+    filter: none
 }
 
 .containerCard__content--text{

@@ -1,14 +1,31 @@
 import React, {Component} from 'react'
 
 import { Card } from 'react-bootstrap'
+import {Link} from 'react-router-dom'
 import './styles/UserCard.css'
 import Gravatar from '../components/Gravatar'
 
 class UserCard extends Component{
     render(){
+        console.log(this.props)
         return (
             <div className='containerCard'>
                 <Card as='article' className='containerCard__content'>
+                    {this.props.actions
+                        &&
+                        <>
+                        <Link to={`/badges/${this.props.id}/edit`} className='CardsList__link-actions'>
+                            <div className='CardList__button-actions'>
+                                <i className="far fa-edit"></i>                                            
+                            </div>
+                        </Link> 
+                        <Link to={`/badges/${this.props.id}/edit`} className='CardsList__link-actions'>
+                            <div className='CardList__button-actions'>
+                                <i class="far fa-trash-alt"></i>                                            
+                            </div>
+                        </Link> 
+                        </>
+                    }
                     <Card.Body className='containerCard__content--text'>
                         <p>{this.props.coverLetter}</p>
                         <p style={{marginBottom: '1rem'}}>
@@ -29,7 +46,7 @@ class UserCard extends Component{
                     </figure>
                 </Card>
             </div>
-        )
+        ) 
     }
 }
 
