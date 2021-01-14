@@ -9,7 +9,7 @@ class Navigation extends Component {
     render() {
         return (
             <Navbar className="navbar">
-                <Link to='/'>
+                <Link to='/badges'>
                     <Navbar.Brand className="navbar__brand">
                         <img className="navbar__brand-logo" src={logo} alt="Logo" />
                         <span>Cover</span>
