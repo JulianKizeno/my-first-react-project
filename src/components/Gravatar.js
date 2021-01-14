@@ -8,7 +8,7 @@ function Gravatar (props){
 
     return(
         <img 
-            src={`https://www.gravatar.com/avatar/${hash}?s=500`} 
+            src={`https://www.gravatar.com/avatar/${hash}?s=500&d=identicon`} 
             alt={props.imgAlt} 
             className={props.className}
         />
