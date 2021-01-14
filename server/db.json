@@ -44,6 +44,26 @@
       "jobTitle": "Dynamic Tactics Liaison",
       "gitHub": "KellyCorkery06275-3676",
       "cardImage": "https://www.gravatar.com/avatar/00e35de53a06a655fe5b6ac8b96bdb84?d=identicon"
+    },
+    {
+      "firstName": "Julian",
+      "lastName": "Quiceno",
+      "email": "julianquiceno20@gmail.com",
+      "linkedin": "https://www.linkedin.com/in/julianquiceno91/",
+      "gitHub": "https://github.com/JulianKizeno",
+      "jobTitle": "Junior Web Developer",
+      "coverLetter": "Para llegar al cielo se necesita: una escalera grande y otra chiquita.",
+      "id": "r0BQE13"
+    },
+    {
+      "firstName": "John",
+      "lastName": "Quiceno",
+      "email": "loncuster@gmail.com",
+      "linkedin": "https://www.linkedin.com/in/julianquiceno91/",
+      "gitHub": "https://github.com/JulianKizeno",
+      "jobTitle": "Senior Web Developer",
+      "coverLetter": "Acerrin acerran, los maderos de San juan",
+      "id": "7xQ-zsA"
     }
   ]
 }
