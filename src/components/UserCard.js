@@ -7,7 +7,6 @@ import Gravatar from '../components/Gravatar'
 
 class UserCard extends Component{
     render(){
-        console.log(this.props)
         return (
             <div className='containerCard'>
                 <Card as='article' className='containerCard__content'>
@@ -21,7 +20,7 @@ class UserCard extends Component{
                         </Link> 
                         <Link to={`/badges/${this.props.id}/edit`} className='CardsList__link-actions'>
                             <div className='CardList__button-actions'>
-                                <i class="far fa-trash-alt"></i>                                            
+                                <i className="far fa-trash-alt"></i>                                            
                             </div>
                         </Link> 
                         </>
