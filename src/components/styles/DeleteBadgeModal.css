@@ -1,0 +1,39 @@
+.delete-b-m {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 10rem;
+    padding: 1rem;
+}
+  
+.delete-b-m button {
+    margin-left: 1rem;
+    padding: 1.5rem;
+    margin-top: 1rem;
+    border-radius: 2rem;
+    outline: none;
+    cursor: pointer;
+}
+
+.delete-b-m__danger-btn{
+    color: #fff;
+    background-color: #CD4040;
+    border-color: transparent;
+}
+
+.delete-b-m__danger-btn:hover{
+    position: relative;
+    top: .1rem;
+}
+
+.delete-b-m__cancel-btn{
+    color: #fff;
+    background-color: #7DCD40;
+    border-color: transparent;
+}
+
+.delete-b-m__cancel-btn:hover{
+    position: relative;
+    top: .1rem;
+}
