@@ -1,9 +1,10 @@
 import React from 'react'
-import { Col, Row, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import UserCard from '../components/UserCard'
 
 function BadgeDetails (props){
     const badge = props.badge
+    const id = props.id
     return(
         <React.Fragment>
             <Container as='section'>
@@ -15,9 +16,14 @@ function BadgeDetails (props){
                         email={badge.email} 
                         linkedin={badge.linkedin}
                         gitHub={badge.gitHub}
-                        jobTtile={badge.jobTtile}
+                        jobTitle={badge.jobTitle}
                         coverLetter={badge.coverLetter}
+                        id={id}
                         actions={true}
+                        onOpenModal={props.onOpenModal}
+                        onCloseModal={props.onCloseModal}
+                        onDeleteBadge={props.onDeleteBadge}
+                        isOpen={props.modalIsOpen}
                     />
     
             </Container>

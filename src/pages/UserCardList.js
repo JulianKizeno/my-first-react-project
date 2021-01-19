@@ -60,7 +60,6 @@ class UserCardList extends Component{
     
     render(){
         console.log('2. render()')
-        console.log(this.state.data)
         if(this.state.loading && !this.state.data){
             return <PageLoading />
         }

@@ -8,7 +8,6 @@ import api from '../api'
 import PageLoading from '../components/PageLoading'
 
 class BadgeEdit extends Component{
-
     state = {
         loading: true,
         error: null,
@@ -61,6 +60,7 @@ class BadgeEdit extends Component{
         })
         try {
             const id = this.props.match.params.badgeId
+            console.log(id)
             await api.badges.update( id, this.state.form)
             this.setState({
                 loading: false
@@ -82,11 +82,10 @@ class BadgeEdit extends Component{
             <React.Fragment>
                 <Container as='section'>
                     <Row className={'badgeEdit__row'}>
-                        <Col md={7} style={{
+                        <Col md={10} style={{
                             display: 'flex', 
                             justifyContent: 'center', 
                             alignItems: 'center', 
-                            width: '100%', 
                             flexDirection: 'column', 
                             margin: '0 5rem'}}
                         >
@@ -107,7 +106,7 @@ class BadgeEdit extends Component{
                                 coverLetter = {this.state.form.coverLetter || 'Your Cover Letter'}
                             />
                         </Col>
-                        <Col md={3} style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%'}}>
+                        <Col md={2} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                             <BadgeForm 
                                 onChange={this.handleChange} 
                                 onSubmit={this.handleSubmit}

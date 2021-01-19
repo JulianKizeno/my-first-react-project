@@ -1,15 +1,78 @@
-import React, {Component} from 'react'
+import React, {useState, useMemo} from 'react'
 
 import './styles/CardsList.css'
+// import '../pages/styles/UserCardList.css'
 import { Card } from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import Gravatar from './Gravatar'
 
-class CardsList extends Component{
-    render(){
-        return (
+// Custom Hook -----
+
+// function useIncreaseCount(max){
+//     const [count, setCount] = React.useState(0)
+//     if(count > max){
+//         setCount(0)
+//     }
+//     return [count, setCount]
+// }
+function useSearchBadges(badges){
+    const [query, setQuery] = useState('')
+    const [filteredBadges, setFilteredBadges] = useState(badges)
+
+    useMemo(() => {
+        const result = badges.filter(badges => `${badges.firstName} ${badges.lastName}`.toLowerCase().includes(query.toLowerCase()))
+        if(filteredBadges.length !== result.length){
+            setFilteredBadges(result)
+        }
+    }, [badges, query])
+
+    return {query, setQuery, filteredBadges}
+}
+function CardsList (props){
+    // const [count, setCount] = useIncreaseCount(4)
+    const badges = props.badges.slice(0).reverse()
+
+    const {query, setQuery, filteredBadges} = useSearchBadges(badges)
+
+    if(filteredBadges.length === 0){
+        return(
+            <div>
+                <form className='CardList__form'>
+                    <input 
+                        type="text" 
+                        value ={query}
+                        onChange={(e)=>setQuery(e.target.value)} 
+                        className='CardList__form--input' 
+                        placeholder='Search Badge'
+                    />
+                </form>
+                <h3>No Badges were found</h3>
+            </div>
+        )
+    }
+
+    return (
+        <React.Fragment>
+            <form className='CardList__form'>
+                <input 
+                    type="text" 
+                    value ={query}
+                    onChange={(e)=>setQuery(e.target.value)} 
+                    className='CardList__form--input' 
+                    placeholder='Search'
+                />
+            </form>
+
+            {/* Custom Hook ----- */}
+
+            {/* <div className="UserCardList__buttons-container">
+                <button className='UserCardList__buttons-container--NewCardBtn' onClick={()=>{
+                    setCount(count + 1)
+                }}>Increase Count: {count}</button>
+            </div> */}
+            
             <ul className='CardsList__list'>
-                {this.props.badges.reverse().map((newCard)=>{
+                {filteredBadges.map((newCard)=>{
                     return(
                         <li key={newCard.id} className='CardsList__list--item'>
                             <Link to={`/badges/${newCard.id}`} className='CardsList__link'>
@@ -40,8 +103,9 @@ class CardsList extends Component{
                     )
                 })}
             </ul>
-        )
-    }
+        </React.Fragment>
+    )
+    
 }
 
 export default CardsList

@@ -63,11 +63,10 @@ class BadgeNew extends Component{
             <React.Fragment>
                 <Container as='section'>
                     <Row className={'badgesNew__row'}>
-                        <Col md={7} style={{
+                        <Col md={10} style={{
                             display: 'flex', 
                             justifyContent: 'center', 
                             alignItems: 'center', 
-                            width: '100%', 
                             flexDirection: 'column', 
                             margin: '0 5rem'}}
                         >
@@ -88,7 +87,7 @@ class BadgeNew extends Component{
                                 coverLetter = {this.state.form.coverLetter || 'Your Cover Letter'}
                             />
                         </Col>
-                        <Col md={3} style={{display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%'}}>
+                        <Col md={2} style={{display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
                             <BadgeForm 
                                 onChange={this.handleChange} 
                                 onSubmit={this.handleSubmit}
