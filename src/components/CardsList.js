@@ -2,7 +2,7 @@ import React, {useState, useMemo} from 'react'
 
 import './styles/CardsList.css'
 // import '../pages/styles/UserCardList.css'
-import { Card } from 'react-bootstrap'
+import { Card, Navbar } from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import Gravatar from './Gravatar'
 
